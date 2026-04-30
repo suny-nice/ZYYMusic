@@ -1,0 +1,10 @@
+# 忽略 img 目录及其所有内容
+/img/
+
+# 忽略 Qt 生成的文件
+/img_rc.py
+/img.qrc
+/ZYYMusic.pro.user
+
+# 忽略 docs 目录及其所有内容
+/docs/
