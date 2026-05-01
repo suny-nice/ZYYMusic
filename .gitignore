@@ -5,6 +5,7 @@
 /img_rc.py
 /img.qrc
 /ZYYMusic.pro.user
+/build/Qt_6_5_3_for_macOS-Debug/
 
 # 忽略 docs 目录及其所有内容
 /docs/

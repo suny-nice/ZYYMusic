@@ -3,9 +3,10 @@ QT += quick
 SOURCES += \
         main.cpp
 
-resources.files = main.qml 
+resources.files = main.qml Src
 resources.prefix = /$${TARGET}
-RESOURCES += resources
+RESOURCES += resources \
+    img.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -17,3 +18,7 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    Src/basic/BasicConfig.qml \
+    Src/basic/qmldir
