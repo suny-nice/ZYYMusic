@@ -1,12 +1,18 @@
 import QtQuick 2.15
 import QtQuick.Controls
 import "../basic"
+import "../topTitle"
 Item {
     id:userLogin
     anchors.right: parent.right
     anchors.rightMargin: 280
     height: 60
     width: 200
+
+    UserLoginPopup{
+    id:userLoginPopup
+    }
+
     Row{
         anchors.verticalCenter: parent.verticalCenter
         spacing: 10
@@ -37,7 +43,9 @@ Item {
                 id: weidengluTextMouseArea
                 anchors.fill: parent
                 hoverEnabled: true
-                // onClicked: {}
+                onClicked: {
+                    userLoginPopup.open()
+                }
             }
         }
         //vip

@@ -20,6 +20,10 @@ Rectangle{
     }
 
     Search{
-
+        id:search
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        height: 60
+        width: 200
     }
 }

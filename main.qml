@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import "./Src"
 import "./Src/basic"
 import "./Src/commonUI"
@@ -34,4 +35,3 @@ ZYYWindow{
             color: BasicConfig.colorWindowRightBg
         }
     }
-

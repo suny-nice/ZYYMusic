@@ -13,4 +13,10 @@ QtObject{
 
     //顶部栏的颜色
     readonly property color colorTop: "#75777f"
+
+    //搜索记录字体颜色
+    readonly property color colorSecondaryText: "#7f7f85"
+
+    // 定义登录弹窗请求信号
+    signal showLoginPopup()
 }
