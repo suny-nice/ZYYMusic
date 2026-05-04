@@ -1,11 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Controls
-import "./basic"
-import "./topTitle"
-Rectangle{
-    id:righttRect
-    // color: parent.color
+import "../basic"
+import "../topTitle"
 
+Item {
+    id:topTitle
     MaxMin{
         id:maxmin
         anchors.right: parent.right

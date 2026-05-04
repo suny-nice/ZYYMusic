@@ -118,7 +118,9 @@ Item {
                 id:shezhi
                 anchors.fill: parent
                 hoverEnabled: true
-                // onClicked: {}
+                onClicked: {
+                    mainStackView.push("/Src/rightPage/stackPage/Setting.qml")
+                }
             }
         }
         //换肤
