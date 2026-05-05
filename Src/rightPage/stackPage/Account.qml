@@ -1,9 +1,9 @@
 import QtQuick 2.15
 import QtQuick.Controls
-
+import "../../commonUI"
 Item {
     width: parent.width
-    height: 40
+    height: 50
         // 标题和内容区域
         Row {
             spacing: 20
@@ -53,5 +53,10 @@ Item {
                     }
                 }
             }
+        }
+        // 分割线
+        ZYYCutLine {
+            anchors.top: parent.bottom
+            anchors.topMargin: 15
         }
     }

@@ -127,8 +127,12 @@ Item {
                 Column {
                     width: parent.width
                     spacing: 30
+                    //账户
                     Account {}
+                    //常规
                     Common {}
+                    //系统
+                    System{}
                 }
             }
         }

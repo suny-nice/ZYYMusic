@@ -1,11 +1,12 @@
 import QtQuick 2.15
-import QtQuick.Controls
+import QtQuick.Controls 2.15
+import QtQuick.Controls.Basic as Basic
 
-ComboBox {
+Basic.ComboBox {
     id: comboBox
-    width: 150
-    height: 32
-    model: ["默认", "仿宋", "华文中宋", "华文仿宋", "华文宋体", "华文新魏", "华文楷体", "华文细黑", "华文行书", "华文隶书", "宋体", "幼圆", "微软雅黑", "微软雅黑 Light", "新宋体", "方正姚体", "方正舒体"]
+    width: 100
+    height: 28
+    model: ["默认", "仿宋", "华文中宋", "华文仿宋", "华文宋体", "华文新魏", "华文楷体", "华文细黑", "华文行书", "华文隶书", "宋体", "幼圆", "微软雅黑", "微软雅黑", "新宋体", "方正姚体", "方正舒体"]
     currentIndex: 0
 
     background: Rectangle {
@@ -19,14 +20,23 @@ ComboBox {
         text: comboBox.displayText
         color: "#f2f4f8"
         font.pixelSize: 13
-        anchors.left: parent.left
+        anchors.fill: parent
         anchors.leftMargin: 12
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.rightMargin: 30  // 为箭头留出空间
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignLeft
     }
 
     delegate: Item {
-        width: parent.width
+        width: comboBox.width
         height: 32
+
+        Rectangle {
+            id: hoverBg
+            anchors.fill: parent
+            color: "#3f4350"
+            visible: false
+        }
 
         Text {
             text: modelData
@@ -34,21 +44,28 @@ ComboBox {
             font.pixelSize: 13
             anchors.left: parent.left
             anchors.leftMargin: 8
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: parent.top
+            anchors.topMargin: (parent.height - implicitHeight) / 2
         }
 
-        Rectangle {
-            width: parent.width
-            height: 1
-            color: "#212127"
-            anchors.bottom: parent.bottom
+
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: hoverBg.visible = true
+            onExited: hoverBg.visible = false
+            onClicked: {
+                comboBox.currentIndex = index
+                comboBox.popup.close()
+            }
         }
     }
 
     popup: Popup {
         y: comboBox.height
         width: comboBox.width
-        height: 300
+        height:300
         padding: 0
         background: Rectangle {
             color: "#25262c"
@@ -64,11 +81,12 @@ ComboBox {
     }
 
     indicator: Text {
-        text: comboBox.popup.visible ? "<" : ">"
+        text: ">"
         color: "#8f939e"
         font.pixelSize: 16
         anchors.right: parent.right
         anchors.rightMargin: 12
         anchors.verticalCenter: parent.verticalCenter
+        rotation: comboBox.popup.visible ? -90 : 90
     }
 }

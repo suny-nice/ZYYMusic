@@ -9,7 +9,7 @@ Item {
     signal toggled(bool checked)
 
     width: checkbox.width + 10 + label.implicitWidth
-    height: Math.max(checkbox.height, label.implicitHeight)
+    height: Math.max(checkbox.height, 20)  // 固定最小高度为20
 
     Rectangle {
         id: checkbox
@@ -17,7 +17,8 @@ Item {
         height: 16
         radius: 3
         anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.top: parent.top
+        anchors.topMargin: (parent.height - height) / 2
         color: root.checked ? "#ff666a" : "transparent"
         border.width: 1
         border.color: root.checked ? "#ff666a" : "#3f4350"
@@ -36,7 +37,8 @@ Item {
         id: label
         anchors.left: checkbox.right
         anchors.leftMargin: 9
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.top: parent.top
+        anchors.topMargin: (parent.height - implicitHeight) / 2
         color: root.textColor
         font.pixelSize: 13
     }

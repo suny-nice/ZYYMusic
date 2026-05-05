@@ -1,0 +1,18 @@
+feat(ui-components): 新增自定义组件并优化现有组件
+- 新增 ZYYRadioButton.qml 自定义单选按钮组件
+- 新增 ZYYComboBox.qml 自定义下拉框组件
+- 优化 ZYYCheckbox.qml 垂直布局兼容性
+- 完善自定义组件文字居中和样式
+
+feat(settings): 完善系统设置页面布局和功能
+- 新增 System.qml 系统设置页面
+- 优化 Common.qml 常规设置页面布局
+- 完善 Setting.qml 设置页面导航结构
+
+feat(account): 完善账户相关页面
+- 优化 Account.qml 账户页面布局
+- 完善 OtherLoginPopup.qml 登录弹窗
+- 优化 UserLogin.qml 用户登录组件
+
+chore(project): 项目配置更新
+- 更新 ZYYMusic.pro.user 项目配置文件

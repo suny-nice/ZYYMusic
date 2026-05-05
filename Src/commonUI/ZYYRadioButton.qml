@@ -1,0 +1,70 @@
+import QtQuick 2.15
+
+Item {
+    id: root
+    
+    // 属性
+    property string text: ""
+    property color textColor: "#ffffff"
+    property int fontSize: 13
+    property bool checked: false
+    
+    // 信号
+    signal clicked()
+    
+    width: radioButton.width + 5 + label.implicitWidth
+    height: Math.max(radioButton.height, label.implicitHeight)
+    
+    // 单选框按钮
+    Rectangle {
+        id: radioButton
+        width: 16
+        height: 16
+        radius: 8
+        border.color: root.checked ? "#ff666a" : "#3f4350"
+        border.width: 2
+        color: "transparent"
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.topMargin: (parent.height - height) / 2
+        
+        // 内圆
+        Rectangle {
+            width: 8
+            height: 8
+            radius: 4
+            color: root.checked ? "#ff666a" : "transparent"
+            anchors.centerIn: parent
+        }
+        
+        // 点击区域
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                root.checked = !root.checked
+                root.clicked()
+            }
+        }
+    }
+    
+    // 文字标签
+    Text {
+        id: label
+        text: root.text
+        color: root.textColor
+        font.pixelSize: root.fontSize
+        anchors.left: radioButton.right
+        anchors.leftMargin: 5
+        anchors.top: parent.top
+        anchors.topMargin: (parent.height - implicitHeight) / 2
+        
+        // 点击区域
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                root.checked = !root.checked
+                root.clicked()
+            }
+        }
+    }
+}
