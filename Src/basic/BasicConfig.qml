@@ -1,5 +1,4 @@
 pragma Singleton
-
 import QtQuick 2.15
 
 QtObject{
@@ -16,7 +15,4 @@ QtObject{
 
     //搜索记录字体颜色
     readonly property color colorSecondaryText: "#7f7f85"
-
-    // 定义登录弹窗请求信号
-    signal showLoginPopup()
 }

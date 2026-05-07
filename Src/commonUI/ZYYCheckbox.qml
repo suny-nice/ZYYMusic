@@ -3,7 +3,7 @@ import QtQuick 2.15
 Item {
     id: root
     property alias text: label.text
-    property color textColor: "#c8ccd5"
+    property color textColor: "white"
     property int fontSize: 13
     property bool checked: false
     signal toggled(bool checked)
@@ -39,8 +39,11 @@ Item {
         anchors.leftMargin: 9
         anchors.top: parent.top
         anchors.topMargin: (parent.height - implicitHeight) / 2
-        color: root.textColor
         font.pixelSize: 13
+        textFormat: Text.RichText
+        
+        // 设置默认颜色，富文本中的样式会覆盖这个颜色
+        color: root.textColor
     }
 
     MouseArea {

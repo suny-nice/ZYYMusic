@@ -8,6 +8,7 @@ Item {
     property color textColor: "#ffffff"
     property int fontSize: 13
     property bool checked: false
+    property string group: ""
     
     // 信号
     signal clicked()
@@ -22,7 +23,7 @@ Item {
         height: 16
         radius: 8
         border.color: root.checked ? "#ff666a" : "#3f4350"
-        border.width: 2
+        border.width: 1
         color: "transparent"
         anchors.left: parent.left
         anchors.top: parent.top
@@ -41,8 +42,10 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                root.checked = !root.checked
-                root.clicked()
+                if (!root.checked) {
+                    root.checked = true
+                    root.clicked()
+                }
             }
         }
     }
@@ -53,6 +56,7 @@ Item {
         text: root.text
         color: root.textColor
         font.pixelSize: root.fontSize
+        textFormat: Text.RichText
         anchors.left: radioButton.right
         anchors.leftMargin: 5
         anchors.top: parent.top
@@ -62,8 +66,24 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                root.checked = !root.checked
-                root.clicked()
+                if (!root.checked) {
+                    root.checked = true
+                    root.clicked()
+                }
+            }
+        }
+    }
+    
+    // 当checked状态改变时，通知同一组的其他单选框
+    onCheckedChanged: {
+        if (checked && group !== "" && parent) {
+            // 查找同一组的单选框并取消选中
+            var siblings = parent.children
+            for (var i = 0; i < siblings.length; i++) {
+                var sibling = siblings[i]
+                if (sibling !== root && sibling.group === group && sibling.checked) {
+                    sibling.checked = false
+                }
             }
         }
     }

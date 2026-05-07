@@ -29,7 +29,7 @@ Basic.ComboBox {
 
     delegate: Item {
         width: comboBox.width
-        height: 32
+        height: 24
 
         Rectangle {
             id: hoverBg
@@ -44,11 +44,8 @@ Basic.ComboBox {
             font.pixelSize: 13
             anchors.left: parent.left
             anchors.leftMargin: 8
-            anchors.top: parent.top
-            anchors.topMargin: (parent.height - implicitHeight) / 2
+            anchors.verticalCenter: parent.verticalCenter
         }
-
-
 
         MouseArea {
             anchors.fill: parent
@@ -65,7 +62,7 @@ Basic.ComboBox {
     popup: Popup {
         y: comboBox.height
         width: comboBox.width
-        height:300
+        height: Math.min(200, Math.max(80, comboBox.count * 24 + 4))
         padding: 0
         background: Rectangle {
             color: "#25262c"

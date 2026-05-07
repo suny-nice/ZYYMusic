@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qmldir</file>
+        
+        <!-- Src/basic -->
+        <file>Src/basic/BasicConfig.qml</file>
+        
+        <!-- Src/commonUI -->
+        <file>Src/commonUI/ZYYCheckbox.qml</file>
+        <file>Src/commonUI/ZYYComboBox.qml</file>
+        <file>Src/commonUI/ZYYCutLine.qml</file>
+        <file>Src/commonUI/ZYYRadioButton.qml</file>
+        <file>Src/commonUI/ZYYShortcut.qml</file>
+        <file>Src/commonUI/ZYYWindow.qml</file>
+        
+        <!-- Src/leftPage -->
+        <file>Src/leftPage/LeftPage.qml</file>
+        
+        <!-- Src/rightPage -->
+        <file>Src/rightPage/RightPage.qml</file>
+        <file>Src/rightPage/TopTitle.qml</file>
+        
+        <!-- Src/rightPage/stackPage -->
+        <file>Src/rightPage/stackPage/Account.qml</file>
+        <file>Src/rightPage/stackPage/CloudMusicCherryPick.qml</file>
+        <file>Src/rightPage/stackPage/Common.qml</file>
+        <file>Src/rightPage/stackPage/CustomShortcut.qml</file>
+        <file>Src/rightPage/stackPage/MessageAndPrivacy.qml</file>
+        <file>Src/rightPage/stackPage/Play.qml</file>
+        <file>Src/rightPage/stackPage/Setting.qml</file>
+        <file>Src/rightPage/stackPage/System.qml</file>
+        
+        <!-- Src/bottomPage -->
+        <file>Src/bottomPage/PlayMusic.qml</file>
+        
+        <!-- Src/topTitle -->
+        <file>Src/topTitle/MaxMin.qml</file>
+        <file>Src/topTitle/OtherLoginPopup.qml</file>
+        <file>Src/topTitle/Search.qml</file>
+        <file>Src/topTitle/UserLogin.qml</file>
+        <file>Src/topTitle/UserLoginPopup.qml</file>
+    </qresource>
+</RCC>

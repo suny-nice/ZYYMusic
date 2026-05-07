@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls
 import "../../commonUI"
+import "."
 Item {
     Item {
         anchors.fill: parent
@@ -121,7 +122,7 @@ Item {
                 id: flick
                 anchors.fill: parent
                 anchors.rightMargin: 20
-                contentHeight: 4800
+                contentHeight: 3000
                 clip: true
 
                 Column {
@@ -133,6 +134,12 @@ Item {
                     Common {}
                     //系统
                     System{}
+                    //播放
+                    Play{}
+                    //消息与隐私
+                    MessageAndPrivacy{}
+                    //快捷键
+                    CustomShortcut{}
                 }
             }
         }

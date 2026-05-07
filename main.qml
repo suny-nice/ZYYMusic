@@ -1,13 +1,14 @@
 import QtQuick
 import QtQuick.Controls
 import "./Src"
-import "./Src/basic"
 import "./Src/commonUI"
 import "./Src/leftPage"
 import "./Src/rightPage"
 import "./Src/bottomPage"
+
 ZYYWindow{
        id: mainWindow
+        
         // 底部播放栏 - 先定义
         PlayMusic{
             id:bottomRect

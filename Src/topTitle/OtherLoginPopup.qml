@@ -401,31 +401,34 @@ Popup {
                 // anchors.left: parent.left
                 // anchors.leftMargin: 14
                 Row {
-                    anchors.centerIn: parent.centerIn
+
                     spacing: -2
                     ZYYCheckbox {
                         checked: false
                         text: "同意"
                         textColor: "#767b87"
-
+                        anchors.verticalCenter: parent.verticalCenter
                     }
 
                     Text {
                         text: "《服务条款》"
                         color: "#748fd7"
                         font.pixelSize: 11
+                         anchors.verticalCenter: parent.verticalCenter
                     }
 
                     Text {
                         text: "《隐私政策》"
                         color: "#748fd7"
                         font.pixelSize: 11
+                         anchors.verticalCenter: parent.verticalCenter
                     }
 
                     Text {
                         text: "《儿童隐私政策》"
                         color: "#748fd7"
                         font.pixelSize: 11
+                         anchors.verticalCenter: parent.verticalCenter
                     }
                 }
             }

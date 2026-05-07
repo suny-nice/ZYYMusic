@@ -56,39 +56,27 @@ Item {
                 }
 
                 // 开启GPU加速
-                Row {
-                    spacing: 10
-                    ZYYCheckbox { text: "开启GPU加速"; textColor: "#ffffff"; fontSize: 13 }
-                    Text {
-                        text: "<span style=\"color: #8f939e;\">(若软件黑屏，请关闭GPU加速尝试解决)</span>"
-                        textFormat: Text.RichText
-                        font.pixelSize: 13
-                    }
+                ZYYCheckbox { 
+                    text: "<span style='color: #ffffff;'>开启GPU加速</span><span style='color: #8f939e;'> (若软件黑屏，请关闭GPU加速尝试解决)</span>"
+                    textColor: "#ffffff"
+                    fontSize: 13 
                 }
 
                 // 禁用动画效果
-                Row {
-                    spacing: 10
-                    ZYYCheckbox { text: "禁用动画效果"; textColor: "#ffffff"; fontSize: 13 }
-                    Text {
-                        text: "<span style=\"color: #8f939e;\">(减少部分资源占用)</span>"
-                        textFormat: Text.RichText
-                        font.pixelSize: 13
-                    }
+                ZYYCheckbox { 
+                    text: "<span style='color: #ffffff;'>禁用动画效果</span><span style='color: #8f939e;'> (减少部分资源占用)</span>"
+                    textColor: "#ffffff"
+                    fontSize: 13 
                 }
 
                 // 禁用系统缩放比例
                 Column {
                     spacing: 5
                     
-                    Row {
-                        spacing: 10
-                        ZYYCheckbox { text: "禁用系统缩放比例"; textColor: "#ffffff"; fontSize: 13 }
-                        Text {
-                            text: "<span style=\"color: #8f939e;\">(减少部分资源占用)</span>"
-                            textFormat: Text.RichText
-                            font.pixelSize: 13
-                        }
+                    ZYYCheckbox { 
+                        text: "<span style='color: #ffffff;'>禁用系统缩放比例</span><span style='color: #8f939e;'> (减少部分资源占用)</span>"
+                        textColor: "#ffffff"
+                        fontSize: 13 
                     }
                     
                     Text {

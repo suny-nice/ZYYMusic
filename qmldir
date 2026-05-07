@@ -1,0 +1,7 @@
+
+module ZYYMusic
+
+singleton BasicConfig 1.0 Src/basic/BasicConfig.qml
+
+# 声明自定义组件
+ZYYShortcut 1.0 Src/commonUI/ZYYShortcut.qml

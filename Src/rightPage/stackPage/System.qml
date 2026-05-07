@@ -4,7 +4,7 @@ import "../../commonUI"
 
 Item {
     width: parent.width
-    height: 300
+    height: 140
 
     // 标题
     Label {
@@ -47,7 +47,7 @@ Item {
 
                     Text {
                         text: "剩余关闭时间"
-                        color: "#8f939e"
+                        color: "white"
                         font.pixelSize: 13
                         anchors.verticalCenter: minuteComboBox.verticalCenter
                     }
@@ -113,7 +113,7 @@ Item {
 
                     Text {
                         text: "关闭主面板"
-                        color: "#8f939e"
+                        color: "white"
                         font.pixelSize: 13
                     }
 
@@ -127,12 +127,7 @@ Item {
                             checked: true
                             textColor: "#ffffff"
                             fontSize: 13
-
-                            onClicked: {
-                                if (minimizeRadio.checked) {
-                                    exitRadio.checked = false
-                                }
-                            }
+                            group: "closeOptionGroup"
                         }
 
                         // 退出云音乐（单选按钮）
@@ -141,12 +136,7 @@ Item {
                             text: "退出云音乐"
                             textColor: "#ffffff"
                             fontSize: 13
-
-                            onClicked: {
-                                if (exitRadio.checked) {
-                                    minimizeRadio.checked = false
-                                }
-                            }
+                            group: "closeOptionGroup"
                         }
                     }
                 }
