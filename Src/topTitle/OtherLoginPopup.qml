@@ -38,6 +38,7 @@ Popup {
         { code: "+92", name: "巴基斯坦", flag: "qrc:/img/country/bajisitan.png" }
     ]
 
+
     contentItem: Rectangle {
         anchors.fill: parent
         color: "#2d2d37"

@@ -74,15 +74,37 @@ Item {
         }
     }
     
+    // 递归查找同一组的所有单选框
+    function findRadioButtonsInGroup(item, groupName) {
+        var result = []
+        if (item && item.children) {
+            for (var i = 0; i < item.children.length; i++) {
+                var child = item.children[i]
+                // 检查是否是ZYYRadioButton且属于同一组
+                if (child !== root && child.group === groupName) {
+                    result.push(child)
+                }
+                // 递归查找子节点
+                result = result.concat(findRadioButtonsInGroup(child, groupName))
+            }
+        }
+        return result
+    }
+    
     // 当checked状态改变时，通知同一组的其他单选框
     onCheckedChanged: {
-        if (checked && group !== "" && parent) {
-            // 查找同一组的单选框并取消选中
-            var siblings = parent.children
-            for (var i = 0; i < siblings.length; i++) {
-                var sibling = siblings[i]
-                if (sibling !== root && sibling.group === group && sibling.checked) {
-                    sibling.checked = false
+        if (checked && group !== "") {
+            // 从根节点开始查找同一组的所有单选框
+            var rootItem = root
+            while (rootItem.parent) {
+                rootItem = rootItem.parent
+            }
+            // 查找同一组的所有单选框
+            var radioButtons = findRadioButtonsInGroup(rootItem, group)
+            for (var i = 0; i < radioButtons.length; i++) {
+                var rb = radioButtons[i]
+                if (rb !== root && rb.checked) {
+                    rb.checked = false
                 }
             }
         }

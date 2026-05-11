@@ -5,7 +5,7 @@ import "../../commonUI"
 Item {
     width: parent.width
     height: 265
-    
+
     Label {
         id: commonArea
         color: "white"
@@ -14,7 +14,7 @@ Item {
         font.pixelSize: 15
         width: 50
     }
-    
+
     Column {
         width: parent.width
         anchors.left: commonArea.right
@@ -35,7 +35,7 @@ Item {
         Item {
             width: parent.width
             height: 200
-            
+
             Column {
                 id: commonCheckBox
                 anchors.left: parent.left
@@ -56,29 +56,29 @@ Item {
                 }
 
                 // 开启GPU加速
-                ZYYCheckbox { 
+                ZYYCheckbox {
                     text: "<span style='color: #ffffff;'>开启GPU加速</span><span style='color: #8f939e;'> (若软件黑屏，请关闭GPU加速尝试解决)</span>"
                     textColor: "#ffffff"
-                    fontSize: 13 
+                    fontSize: 13
                 }
 
                 // 禁用动画效果
-                ZYYCheckbox { 
+                ZYYCheckbox {
                     text: "<span style='color: #ffffff;'>禁用动画效果</span><span style='color: #8f939e;'> (减少部分资源占用)</span>"
                     textColor: "#ffffff"
-                    fontSize: 13 
+                    fontSize: 13
                 }
 
                 // 禁用系统缩放比例
                 Column {
                     spacing: 5
-                    
-                    ZYYCheckbox { 
+
+                    ZYYCheckbox {
                         text: "<span style='color: #ffffff;'>禁用系统缩放比例</span><span style='color: #8f939e;'> (减少部分资源占用)</span>"
                         textColor: "#ffffff"
-                        fontSize: 13 
+                        fontSize: 13
                     }
-                    
+
                     Text {
                         text: "<span style=\"color: #ff4a55;font-size: 11px;\">*</span><span style=\"color: #8f939e;font-size: 11px;\">高清屏适配，禁用后建议重启软件</span>"
                         textFormat: Text.RichText

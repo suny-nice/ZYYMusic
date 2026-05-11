@@ -122,7 +122,7 @@ Item {
                 id: flick
                 anchors.fill: parent
                 anchors.rightMargin: 20
-                contentHeight: 3000
+                contentHeight: 3800
                 clip: true
 
                 Column {
@@ -140,6 +140,14 @@ Item {
                     MessageAndPrivacy{}
                     //快捷键
                     CustomShortcut{}
+                    //音质与下载
+                    SoundQualityAndDownload{}
+                    //桌面歌词
+                    DesktopLyrics{}
+                    //工具
+                    Tool{}
+                    //关于网易云音乐
+                    About{}
                 }
             }
         }

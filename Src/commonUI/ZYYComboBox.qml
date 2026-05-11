@@ -62,7 +62,7 @@ Basic.ComboBox {
     popup: Popup {
         y: comboBox.height
         width: comboBox.width
-        height: Math.min(200, Math.max(80, comboBox.count * 24 + 4))
+        height: Math.min(200, Math.max(comboBox.count * 24 + 4, 48))
         padding: 0
         background: Rectangle {
             color: "#25262c"

@@ -15,4 +15,14 @@ QtObject{
 
     //搜索记录字体颜色
     readonly property color colorSecondaryText: "#7f7f85"
+    
+    //已播放歌词颜色
+    property color finishedLyricsUpColor: "#ee83b4"          //已播放歌词的上渐变颜色
+    property color finishedLyricsDownColor: "#f3b3b1"        //已播放歌词的下渐变颜色
+    property color finishedLyricsBorderColor: "#fffff9"      //已播放歌词的边框颜色
+    
+    //未播放歌词颜色
+    property color unFinishedLyricsUpColor: "white"          //未播放歌词的上渐变颜色
+    property color unFinishedLyricsDownColor: "#dddddd"      //未播放歌词的下渐变颜色
+    property color unFinishedLyricsBorderColor: "white"      //未播放歌词的边框颜色
 }
