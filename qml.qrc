@@ -13,7 +13,6 @@
         <file>Src/rightPage/RightPage.qml</file>
         <file>Src/rightPage/TopTitle.qml</file>
         <file>Src/rightPage/stackPage/Account.qml</file>
-        <file>Src/rightPage/stackPage/CloudMusicCherryPick.qml</file>
         <file>Src/rightPage/stackPage/Common.qml</file>
         <file>Src/rightPage/stackPage/CustomShortcut.qml</file>
         <file>Src/rightPage/stackPage/MessageAndPrivacy.qml</file>
@@ -32,5 +31,9 @@
         <file>Src/topTitle/ColorSelectPopup.qml</file>
         <file>Src/rightPage/stackPage/About.qml</file>
         <file>Src/rightPage/stackPage/Tool.qml</file>
+        <file>Src/rightPage/CloudMusicCherryPick.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/CherryPick.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/Carousellmage.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/OfficialPlayList.qml</file>
     </qresource>
 </RCC>

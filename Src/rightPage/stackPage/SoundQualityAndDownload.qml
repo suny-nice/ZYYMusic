@@ -68,6 +68,8 @@ Item {
     Row {
         spacing: 20
         anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
         
         // 标题
         Text {
@@ -76,11 +78,13 @@ Item {
             font.bold: true
             font.pixelSize: 15
             width: 80
+            anchors.verticalCenter: parent.verticalCenter
         }
         
         // 内容区域
         Column {
             spacing: 30
+            anchors.top: parent.top
             
             // 音质播放设置
             Column {
@@ -102,10 +106,10 @@ Item {
                         spacing: 60
                         
                         ZYYRadioButton {
-                            text: "沉静环绕声"
+                            text: "沉静环绕声  "
                             textColor: "#f2f4f8"
                             group: "playQualityGroup"
-                            checked: root.playQuality === "沉静环绕声"
+                            checked: root.playQuality === "沉静环绕声  "
                             onClicked: {
                                 root.playQuality = "沉静环绕声"
                             }
@@ -114,6 +118,7 @@ Item {
                         ZYYRadioButton {
                             text: "超声母带"
                             textColor: "#f2f4f8"
+
                             group: "playQualityGroup"
                             checked: root.playQuality === "超声母带"
                             onClicked: {
@@ -287,8 +292,6 @@ Item {
             }
 
             // 了解音质（放在音质下载设置下面）
-
-
             Text {
                 text: "了解音质>"
                 color: "#8f939e"
@@ -301,11 +304,6 @@ Item {
                     }
                 }
             }
-
-
-
-
-
             
             // 下载目录
             ZYYFolderSet {

@@ -23,6 +23,6 @@ Rectangle{
         anchors.bottom: parent.bottom
         // anchors.bottomMargin: 100
         clip: true
-        initialItem: "qrc:/Src/rightPage/stackPage/CloudMusicCherryPick.qml"
+        initialItem: "qrc:/Src/rightPage/CloudMusicCherryPick.qml"
     }
 }

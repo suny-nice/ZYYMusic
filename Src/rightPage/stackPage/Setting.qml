@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls
 import "../../commonUI"
 import "."
+
 Item {
     Item {
         anchors.fill: parent
@@ -52,6 +53,22 @@ Item {
                                 tabRow.currentIndex = index
                                 underline.x = tabItem.x
                                 underline.width = tabItem.width
+                                
+                                // 滚动到对应位置
+                                var targetY = 0
+                                switch(index) {
+                                    case 0: targetY = accountItem.y; break
+                                    case 1: targetY = commonItem.y; break
+                                    case 2: targetY = systemItem.y; break
+                                    case 3: targetY = playItem.y; break
+                                    case 4: targetY = messageItem.y; break
+                                    case 5: targetY = shortcutItem.y; break
+                                    case 6: targetY = soundItem.y; break
+                                    case 7: targetY = lyricsItem.y; break
+                                    case 8: targetY = toolItem.y; break
+                                    case 9: targetY = aboutItem.y; break
+                                }
+                                flick.contentY = targetY
                             }
                         }
                     }
@@ -100,7 +117,7 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
 
                     // 根据滚动位置更新滑块位置
-                    y: flick.visibleArea.yPosition * (scrollBar.height - 30)
+                    y: flick.visibleArea.yPosition * (scrollBar.height - 60)
 
                     // 拖拽滑动
                     MouseArea {
@@ -122,32 +139,32 @@ Item {
                 id: flick
                 anchors.fill: parent
                 anchors.rightMargin: 20
-                contentHeight: 3800
+                contentHeight: 3200
                 clip: true
 
                 Column {
                     width: parent.width
                     spacing: 30
                     //账户
-                    Account {}
+                    Account { id: accountItem }
                     //常规
-                    Common {}
+                    Common { id: commonItem }
                     //系统
-                    System{}
+                    System{ id: systemItem }
                     //播放
-                    Play{}
+                    Play{ id: playItem }
                     //消息与隐私
-                    MessageAndPrivacy{}
+                    MessageAndPrivacy{ id: messageItem }
                     //快捷键
-                    CustomShortcut{}
+                    CustomShortcut{ id: shortcutItem }
                     //音质与下载
-                    SoundQualityAndDownload{}
+                    SoundQualityAndDownload{ id: soundItem }
                     //桌面歌词
-                    DesktopLyrics{}
+                    DesktopLyrics{ id: lyricsItem }
                     //工具
-                    Tool{}
+                    Tool{ id: toolItem }
                     //关于网易云音乐
-                    About{}
+                    About{ id: aboutItem }
                 }
             }
         }
