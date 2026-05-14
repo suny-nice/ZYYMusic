@@ -1,4 +1,4 @@
-import QtQuick 2.15
+addimport QtQuick 2.15
 import QtQuick.Controls
 
 Item {
