@@ -49,13 +49,15 @@ Item {
         Column {
             id: contentColumn
             width: parent.width
-            spacing: 30
+            spacing: 10
             //轮播图
             Carousellmage {
                 width: parent.width
             }
             //歌单
             OfficialPlayList{}
+            //最新音乐
+            NewSing{}
         }
     }
 }

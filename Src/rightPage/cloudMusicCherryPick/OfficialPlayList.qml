@@ -1,4 +1,4 @@
-addimport QtQuick 2.15
+import QtQuick 2.15
 import QtQuick.Controls
 
 Item {
@@ -75,9 +75,9 @@ Item {
         anchors.left: parent.left
         anchors.leftMargin: root.sidePadding
         anchors.top: parent.top
-        text: "官方歌单>"
+        text: "官方歌单"
         color: "white"
-        font.pixelSize: 15
+        font.pixelSize: 18
         font.bold: true
     }
 

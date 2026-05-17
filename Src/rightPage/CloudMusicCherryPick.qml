@@ -1,12 +1,19 @@
 import QtQuick 2.15
 import QtQuick.Controls
+import "../basic"
 
 Item {
+    id: root
     width: parent.width
     height: parent.height
 
     // 当前选中的标签索引
     property int currentIndex: 0
+
+    Component.onCompleted: {
+        BasicConfig.cloudMusicCherryPick = root
+        BasicConfig.pushNav(0)
+    }
 
     // 导航栏
     Row {
@@ -35,7 +42,10 @@ Item {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            currentIndex = index
+                            if (currentIndex !== index) {
+                                currentIndex = index
+                                BasicConfig.pushNav(index)
+                            }
                         }
                     }
                 }
@@ -53,11 +63,18 @@ Item {
         }
     }
 
-    // 内容区域
-    StackView {
-        id: cloudMusicCherryPick
+    // 内容区域 - 使用 Loader 来切换页面
+    Loader {
         anchors.fill: parent
         anchors.topMargin: navRow.height
-        initialItem: "qrc:/Src/rightPage/cloudMusicCherryPick/CherryPick.qml"
+        source: {
+            switch(currentIndex) {
+                case 0: return "qrc:/Src/rightPage/cloudMusicCherryPick/CherryPick.qml"
+                case 1: return "qrc:/Src/rightPage/cloudMusicCherryPick/SongListSquare.qml"
+                case 2: return "qrc:/Src/rightPage/cloudMusicCherryPick/Ranking.qml"
+                case 3: return "qrc:/Src/rightPage/cloudMusicCherryPick/Sings.qml"
+                default: return "qrc:/Src/rightPage/cloudMusicCherryPick/CherryPick.qml"
+            }
+        }
     }
 }

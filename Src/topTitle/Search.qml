@@ -212,7 +212,26 @@ Item {
             border.color: "#36262f"
             border.width: 1
 
-            Image { height: 23; width: 20; source: "qrc:/img/zuojiantou.png"; anchors.centerIn: parent }
+            Image { 
+                height: 23; 
+                width: 20; 
+                source: "qrc:/img/zuojiantou.png"; 
+                anchors.centerIn: parent 
+            }
+            
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (BasicConfig.canGoBackStack()) {
+                        BasicConfig.popStack()
+                    } else if (BasicConfig.canGoBack()) {
+                        var prevIndex = BasicConfig.popNav()
+                        if (BasicConfig.cloudMusicCherryPick && prevIndex !== null) {
+                            BasicConfig.cloudMusicCherryPick.currentIndex = prevIndex
+                        }
+                    }
+                }
+            }
         }
         //输入框
         Item {

@@ -35,5 +35,9 @@
         <file>Src/rightPage/cloudMusicCherryPick/CherryPick.qml</file>
         <file>Src/rightPage/cloudMusicCherryPick/Carousellmage.qml</file>
         <file>Src/rightPage/cloudMusicCherryPick/OfficialPlayList.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/NewSing.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/SongListSquare.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/Ranking.qml</file>
+        <file>Src/rightPage/cloudMusicCherryPick/Sings.qml</file>
     </qresource>
 </RCC>

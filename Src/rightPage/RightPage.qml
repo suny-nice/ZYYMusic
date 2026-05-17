@@ -5,7 +5,6 @@ import "../topTitle"
 
 Rectangle{
     id:righttRect
-    // color: parent.color
     TopTitle{
         id:topTitle
         anchors.left: parent.left
@@ -14,15 +13,17 @@ Rectangle{
         height: 60
     }
 
-    //压栈
     StackView{
         id:mainStackView
         anchors.top: topTitle.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        // anchors.bottomMargin: 100
         clip: true
         initialItem: "qrc:/Src/rightPage/CloudMusicCherryPick.qml"
+        
+        Component.onCompleted: {
+            BasicConfig.mainStackView = mainStackView
+        }
     }
 }

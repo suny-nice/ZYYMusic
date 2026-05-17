@@ -5,6 +5,7 @@ import "../topTitle"
 
 Item {
     id:topTitle
+    
     MaxMin{
         id:maxmin
         anchors.right: parent.right

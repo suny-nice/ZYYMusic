@@ -25,4 +25,58 @@ QtObject{
     property color unFinishedLyricsUpColor: "white"          //未播放歌词的上渐变颜色
     property color unFinishedLyricsDownColor: "#dddddd"      //未播放歌词的下渐变颜色
     property color unFinishedLyricsBorderColor: "white"      //未播放歌词的边框颜色
+    
+    // 导航历史列表（用于标签导航）
+    property var navHistory: []
+    
+    // StackView 历史列表（用于设置页面导航）
+    property var stackHistory: []
+    
+    // CloudMusicCherryPick 组件引用
+    property var cloudMusicCherryPick: null
+    
+    // StackView 引用
+    property var mainStackView: null
+    
+    // 添加页面到导航历史（标签导航）
+    function pushNav(pageInfo) {
+        navHistory.push(pageInfo)
+    }
+    
+    // 从导航历史弹出上一个页面（标签导航）
+    function popNav() {
+        if (navHistory.length > 1) {
+            navHistory.pop()
+            return navHistory[navHistory.length - 1]
+        }
+        return null
+    }
+    
+    // 检查是否可以返回（标签导航）
+    function canGoBack() {
+        return navHistory.length > 1
+    }
+    
+    // 添加页面到 StackView 历史
+    function pushStack(pageInfo) {
+        stackHistory.push(pageInfo)
+        if (mainStackView) {
+            mainStackView.push(pageInfo)
+        }
+    }
+    
+    // 从 StackView 弹出上一个页面
+    function popStack() {
+        if (stackHistory.length > 0) {
+            stackHistory.pop()
+            if (mainStackView) {
+                mainStackView.pop()
+            }
+        }
+    }
+    
+    // 检查是否可以返回（StackView 导航）
+    function canGoBackStack() {
+        return stackHistory.length > 0
+    }
 }
