@@ -119,7 +119,7 @@ Item {
                 anchors.fill: parent
                 hoverEnabled: true
                 onClicked: {
-                    mainStackView.push("/Src/rightPage/stackPage/Setting.qml")
+                    BasicConfig.pushStack("qrc:/Src/rightPage/stackPage/Setting.qml")
                 }
             }
         }
@@ -146,8 +146,4 @@ Item {
         }
 
     }
-    // Rectangle{
-    //     anchors.fill: parent
-    //     color: "red"
-    // }
 }
