@@ -65,27 +65,27 @@ Item {
     }
     
     // 标题和内容区域
-    Row {
-        spacing: 20
+    Item {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
         
         // 标题
         Text {
+            id:soundItem
             text: "音质与下载"
             color: "white"
             font.bold: true
             font.pixelSize: 15
             width: 80
-            anchors.verticalCenter: parent.verticalCenter
         }
         
         // 内容区域
         Column {
             spacing: 30
             anchors.top: parent.top
-            
+            anchors.left: soundItem.right
+            anchors.leftMargin: 20
             // 音质播放设置
             Column {
                 spacing: 10
