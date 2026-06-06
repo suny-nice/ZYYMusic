@@ -197,7 +197,7 @@
 
 另外最左端的大矩形、已/未播放和预览里三者颜色一致，颜色一致性通过 [BasicConfig.qml](https://github.com/suny-nice/ZYYMusic/blob/main/Src/basic/BasicConfig.qml) 中定义的**全局颜色属性**实现。
 
-![image-20260606233936579](/Users/liaoyuanqing/Library/Application Support/typora-user-images/image-20260606233936579.png)
+![颜色一致性](screenshots/settings-lyrics-3.png)
 
 ### 5.播放栏
 
